@@ -9,8 +9,8 @@ const startAnimation = () => {
   const button = document.querySelector('.callout-showList')
 
 
-  const titleAnimation = 'zoomInDown'
-  const subTitleAnimation = 'zoomInDown'
+  const titleAnimation = 'fadeIn'
+  const subTitleAnimation = 'fadeInup'
   const buttonAnimation = 'zoomInUp'
   const sidebarAnimation = 'fadeInRight'
 
