@@ -10,7 +10,7 @@ const startAnimation = () => {
 
 
   const titleAnimation = 'fadeIn'
-  const subTitleAnimation = 'fadeInup'
+  const subTitleAnimation = 'fadeInUp'
   const buttonAnimation = 'zoomInUp'
   const sidebarAnimation = 'fadeInRight'
 
