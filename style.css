@@ -470,8 +470,8 @@ blockquote {
   z-index: 9100;
 }
 
-body.is-mobile .docs-header {
-  transform: translateY(-6%);
+body.is-mobile .container {
+  transform: translateY(-7%);
 }
 
 
