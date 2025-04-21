@@ -1404,7 +1404,7 @@ $ npm install
     <!-- Fork Corner Scripts --
     <script src="https://cdn.jsdelivr.net/npm/fork-corner/dist/fork-corner.min.js" defer></script>-->
     
-    <!--fork-corner-->
+    <!--fork-corner--
     <div id="fork-wrapper"></div>
 
     <script>
@@ -1455,7 +1455,7 @@ $ npm install
     
       window.addEventListener("DOMContentLoaded", toggleFork);
       window.addEventListener("resize", toggleFork);
-    </script>
+    </script> -->
 
 
 
@@ -1491,6 +1491,19 @@ $ npm install
         // Ctrl+Shift+K (برای Firefox)
         if (e.ctrlKey && e.shiftKey && e.key === 'K') {
           e.preventDefault();
+        }
+      });
+    </script>
+    
+
+    <script>
+      function isMobile() {
+        return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      }
+    
+      window.addEventListener("DOMContentLoaded", () => {
+        if (isMobile()) {
+          document.body.classList.add("is-mobile");
         }
       });
     </script>
