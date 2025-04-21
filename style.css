@@ -22,6 +22,7 @@
 
 html,
 body {
+  padding-top: env(safe-area-inset-top);
   margin: 0;
   padding: 0;
 }
@@ -460,6 +461,7 @@ blockquote {
 }
 
 .docs-header {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 0.1rem);
   position: relative;
   padding: 0.5rem 0;
   text-align: left !important;
