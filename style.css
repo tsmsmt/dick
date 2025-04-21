@@ -7,7 +7,7 @@
   --c-main: #AB0012;
   --c-secondary: #D4AF37;
   /*--c-dark: #333;*/
-  --c-dark: #AB0012;
+  --c-dark: #ab0015;
   /*--c-background: #fce5cd;*/
   --c-background: #1C1919;
   /*--c-background-dark: #f7d7b5;*/
@@ -235,7 +235,7 @@ blockquote {
 
 .callout-title {
   margin-bottom: 0;
-
+  animation-duration: 4s;
   animation-delay: 0.25s;
   font-family: help-me;
   font-size: 4rem;
@@ -253,14 +253,14 @@ blockquote {
 
 @media (min-width: 700px) {
   .callout-title {
-    animation-delay: 0s;
+    animation-delay: 0.25s;
   }
 }
 
 .callout-subtitle {
   margin-top: 0;
-
-  animation-delay: 0.3s;
+  animation-duration: 4.2s;
+  animation-delay: 1s;
 
   color: var(--c-secondary);
   font-size: 1.3333rem;
@@ -269,7 +269,8 @@ blockquote {
 
 .callout-showList {
   margin-top: 2rem;
-  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-delay: 2s;
 }
 
 @media (min-width: 700px) {
@@ -469,6 +470,11 @@ blockquote {
   z-index: 9100;
 }
 
+body.is-mobile .docs-header {
+  transform: translateY(-10px);
+}
+
+
 .docs-header .container {
   display: block !important;
   text-align: left !important;
@@ -515,22 +521,41 @@ blockquote {
 
 .hamburger {
   --size: 30px;
-
+  z-index: 9999999999;
   display: flex;
   align-items: center;
   justify-content: center;
   position:sticky;
+  margin-top: 0.75%;
   top: 2rem;
-  left: 100%;
+  left: 96%;
   width: var(--size);
   height: var(--size);
-
+  border-radius: 30%;
   background-color: var(--c-secondary);
-  transition: transform 0.2s ease-out;
 
+
+  transition: transform 0.2s ease-out;
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .hamburger {
+    left: 95%;
+  }
+}
+
+@media (max-width: 700px) {
+  .hamburger {
+    left: 94%;
+  }
+}
+
+@media (max-width: 550px) {
+  .hamburger {
+    left: 93%;
+  }
+}
 
 .hamburger-active .hamburger {
   transform: translateX(-240px);
@@ -787,7 +812,12 @@ blockquote {
 .dark h4,
 .dark a[title='Documentation'],
 .dark pre * {
-  color: #e0e0e0;
+  /*color: #e0e0e0;*/
+  color: #5b2aa88e;
+}
+
+.dark .docs-header {
+  background-color: #1C1919;
 }
 
 .dark section {
@@ -796,12 +826,30 @@ blockquote {
 
 .dark h1,
 .dark a {
-  color: #4672fe;
+  /*color: #4672fe;*/
+  color: #34850f9f;
+}
+
+.dark .hamburger {
+  background-color: #34850f9f;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 55%, #34850f9f 100%);
+  box-shadow: 0px 0px 5px 5px #34850f9f;
+}
+
+.dark .main-footer {
+  background-color: #1C1919;
+  color: #5b2aa88e;
+  font-size: medium;
+}
+
+.dark .scroll-progress {
+  background-color: #34850f9f;
 }
 
 .dark #scrollToTopBtn {
-  background-color: #4672fe;
+  background-color: #34850f9f;
 }
+
 
 #scrollToTopBtn {
   text-align: center;
@@ -844,7 +892,8 @@ blockquote {
 }
 
 @media (min-width: 1000px) {
-  .icon-github {
-      display: none;
-    }
+.icon-github {
+    display: none;
   }
+}
+
