@@ -850,6 +850,9 @@ body.is-mobile .container {
   background-color: #34850f9f;
 }
 
+.dark blockquote {
+  border-left: 6px solid #34850f9f;
+}
 
 #scrollToTopBtn {
   text-align: center;
