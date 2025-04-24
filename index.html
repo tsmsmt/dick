@@ -47,7 +47,7 @@
     <link id="favicon" rel="icon" href="freams-ani/frame_000_delay-0.02s.gif">
 
 
-    <script>
+    <!--<script>
       document.addEventListener('click', function playAudio() {
           const audio = new Audio('what.mp3');
           audio.autoplay = true;
@@ -56,7 +56,20 @@
           
           document.removeEventListener('click', playAudio);
       }, {once: true});
-  </script>
+  </script>-->
+    <script>
+  const audio = new Audio("what.mp3");
+  audio.loop = true;
+
+  function playAudioOnce() {
+    audio.play().catch((e) => console.log("موبایل اجازه نداد:", e));
+    document.removeEventListener("click", playAudioOnce);
+    document.removeEventListener("touchstart", playAudioOnce);
+  }
+
+  document.addEventListener("click", playAudioOnce, { once: true });
+  document.addEventListener("touchstart", playAudioOnce, { once: true });
+</script>
 
 
   </head>
