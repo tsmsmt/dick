@@ -47,8 +47,48 @@
     <link id="favicon" rel="icon" href="freams-ani/frame_000_delay-0.02s.gif">
 
 
+    <script>
+      document.addEventListener('click', function playAudio() {
+          const audio = new Audio('what.mp3');
+          audio.autoplay = true;
+          audio.loop = true;
+          audio.play().catch(e => console.log("failed to play bg audio"));
+          
+          document.removeEventListener('click', playAudio);
+      }, {once: true});
+  </script>
+
+
   </head>
   <body>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("nameForm");
+        const overlay = document.getElementById("nameOverlay");
+        const userNameInput = document.getElementById("userName");
+        const targetText = document.querySelector("#intro blockquote p");
+    
+        const storedName = localStorage.getItem("tsmsmtUserName");
+    
+        if (storedName) {
+          overlay.style.display = "none";
+          targetText.innerHTML = `What is love? <strong>${storedName}</strong> dont hurt me! dont hurt meeeeee no more.`;
+        }
+    
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = userNameInput.value.trim();
+          if (name !== "") {
+            localStorage.setItem("tsmsmtUserName", name); // ذخیره اسم در localStorage
+            overlay.style.display = "none";
+            targetText.innerHTML = `What is love? <strong>${name}</strong> dont hurt me! dont hurt meeeeee no more.`;
+          }
+        });
+      });
+    </script>
+    
+    
 
     <!-- اسکریپت انیمیشن فاوآیکون -->
     <script>
@@ -906,7 +946,7 @@
           <div class="content">
       <section class="docSection-intro" id="intro">
         <blockquote>
-<p> This project got<strong> fucked as hell.</strong> <!--<a href="#migration"> ss </a>--> </p>
+<p>  <strong>  </strong> <!--<a href="#migration"> ss </a>--> </p>
 </blockquote>
 <!--<p><strong>Animate.css</strong> is a library of ready-to-use, cross-browser animations for use in your web projects. Great for emphasis, home pages, sliders, and attention-guiding hints.</p>
 
@@ -1368,6 +1408,17 @@ $ npm install
       </article>
     </main>
 
+
+    <div id="nameOverlay" class="name-overlay">
+      <form id="nameForm" class="name-form">
+        <label for="userName">Fill out this form with your name 😍 </label>
+        <input type="text" id="userName" placeholder="A real name." required />
+        <button type="submit">Continue ==></button>
+      </form>
+    </div>
+    
+
+
     <footer class="main-footer">
       <p id="copyright1" >
         TSMSMT is shimpanzini bananiny <!--<a href="https://github.com/animate-css/animate.css/blob/main/LICENSE" title="license">license file.</a>-->
@@ -1508,6 +1559,9 @@ $ npm install
       });
     </script>
     
+
+
+
 
   </body>
 </html>
