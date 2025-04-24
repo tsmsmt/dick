@@ -471,7 +471,7 @@ blockquote {
 }
 
 body.is-mobile .container {
-  transform: translateY(-7%);
+  transform: translateY(-10px);
 }
 
 
@@ -900,3 +900,61 @@ body.is-mobile .container {
   }
 }
 
+
+.name-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.514);
+  z-index: 999999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-form {
+  background: var(--c-background-dark);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  color: var(--c-dark);
+  font-family: 'Work Sans', sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.514);
+}
+
+.name-form input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 80px;
+  border: 2px solid var(--c-main);
+  background: #fff;
+  color: var(--c-dark);
+}
+
+.name-form button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--c-main);
+  color: white;
+  border: none;
+  border-radius: 80px;
+  cursor: pointer;
+}
+
+.dark .name-form {
+  background-color: #5b2aa88e;
+  color: #34850f9f;
+  font-weight: 700;
+}
+
+.dark .name-form button {
+  font-weight: 900;
+  background-color: #1C1919;
+  color: #34850f9f;
+}
+
+.dark .name-form input {
+  font-weight: 700;
+  color: white;
+  background-color: #34850f9f;
+  border: #1C1919;
+}
